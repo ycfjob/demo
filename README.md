@@ -26,6 +26,10 @@ step 3 :  創建 docker image
  
  $ docker build -t demo .
  
+ (如果要送參數)
+ 
+ $ docker build -t --build-arg SPRING_PROFILE=dev demo .
+ 
  查看
  
  $ docker images 
@@ -33,6 +37,8 @@ step 3 :  創建 docker image
 step 4 : 跑 container  (預設是 dev)
 
 $ docker run --name demo -p 9000:9000 demo
+
+
 
 
 # Docker image 部署
