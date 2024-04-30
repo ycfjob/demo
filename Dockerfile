@@ -1,0 +1,11 @@
+FROM openjdk:8-jre-slim
+#FROM openjdk:8
+VOLUME /tmp
+COPY target/demo-0.1.jar demo.jar
+ARG SPRING_PROFILE
+ENV SPRING_PROFILE_ENV ${SPRING_PROFILE}
+ARG VERSION_TAG
+ENV VERSION_TAG_ENV ${VERSION_TAG}
+
+EXPOSE 9000
+ENTRYPOINT java -jar -Dspring.profiles.active=$SPRING_PROFILE_ENV -Dversion=$VERSION_TAG_ENV demo.jar

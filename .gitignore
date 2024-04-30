@@ -26,6 +26,7 @@ hs_err_pid*
 # Java
 .classpath
 .factorypath
+.mvn
 .project
 .settings/
 HELP.md
